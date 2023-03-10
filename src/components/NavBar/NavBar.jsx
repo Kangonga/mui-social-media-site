@@ -15,6 +15,7 @@ export default function NavBar(){
     const StyledNavBar = styled(AppBar)({
         margin:"0 0 .2rem 0",
         display:"flex",
+        position:"sticky"
     })
     const Search = styled(Box)({
         backgroundColor:"white",
@@ -35,7 +36,7 @@ export default function NavBar(){
         gap:"1rem",
         flexDirection:"row",
         alignItems:"center",
-        justifyContent:"space-between",
+        justifyContent:"center",
         borderRadius:"30px",
         [theme.breakpoints.down("sm")]:{
             justifyContent:"flex-end",
@@ -49,12 +50,12 @@ export default function NavBar(){
     }))
     return (
         <>
-        <StyledNavBar position="relative" margin="2rem">
+        <StyledNavBar >
             <Toolbar sx={{ flexDirection:"row",
                     justifyContent:"space-between",
                     alignItems:"center",
                     gap:"1rem",
-                    padding:"2rem 1rem"
+                    padding:"2rem 1rem",
                     }}>
                 <Box display={"flex"}
                     fontSize={"2rem"}flex={1} justifyContent={"space-between"}

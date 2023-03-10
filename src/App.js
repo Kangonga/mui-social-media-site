@@ -9,9 +9,7 @@ import { Box,Container,Stack } from '@mui/system';
 
 function App() {
   return (
-    <Box gap={1}>
-      {/* <Test /> */}
-      {/* <Container> */}
+    <Box gap={1} >
       <NavBar />
         <Stack 
            direction={"row"}

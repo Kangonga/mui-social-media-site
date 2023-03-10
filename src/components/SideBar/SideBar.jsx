@@ -8,75 +8,78 @@ export default function SideBar(){
     <Box flex={1}
     display={{
         xs: "none",
-        sm: "inline"
-    }} 
-    >
-        <h1>sidebar</h1>
-        <List>
+        sm: "block"
+    }}
+    position="relative"
+    > 
+    <Box position="fixed">
+    <List>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <Home></Home>
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItemButton>
-          </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <Home></Home>
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <Pages></Pages>
-              </ListItemIcon>
-              <ListItemText primary="Pages" />
-            </ListItemButton>
-          </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <Pages></Pages>
+            </ListItemIcon>
+            <ListItemText primary="Pages" />
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <Group></Group>
-              </ListItemIcon>
-              <ListItemText primary="Group" />
-            </ListItemButton>
-          </ListItem>
-          </List>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <Group></Group>
+            </ListItemIcon>
+            <ListItemText primary="Group" />
+          </ListItemButton>
+        </ListItem>
+        </List>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <Person></Person>
-              </ListItemIcon>
-              <ListItemText primary="Person" />
-            </ListItemButton>
-          </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <Person></Person>
+            </ListItemIcon>
+            <ListItemText primary="Person" />
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <Settings></Settings>
-              </ListItemIcon>
-              <ListItemText primary="Settings" />
-            </ListItemButton>
-          </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <Settings></Settings>
+            </ListItemIcon>
+            <ListItemText primary="Settings" />
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <AccountBox></AccountBox>
-              </ListItemIcon>
-              <ListItemText primary="Account" />
-            </ListItemButton>
-          </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <AccountBox></AccountBox>
+            </ListItemIcon>
+            <ListItemText primary="Account" />
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <ModeNight></ModeNight>
-              </ListItemIcon>
-              <Switch></Switch>
-            </ListItemButton>
-          </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ModeNight></ModeNight>
+            </ListItemIcon>
+            <Switch></Switch>
+          </ListItemButton>
+        </ListItem>
+    </Box>
+
     </Box>
     )
 }

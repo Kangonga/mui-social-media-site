@@ -27,7 +27,7 @@ export default function Post(){
     return (<>
         <Box>
 
-            <Card >
+            <Card sx={{margin:"1rem"}} >
             <CardHeader
                 avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -46,7 +46,7 @@ export default function Post(){
 
             <CardMedia
                 component="img"
-                height="194"
+                height="20%"
                 image={images.pic1}
                 alt="Paella dish"
             />
@@ -62,7 +62,7 @@ export default function Post(){
 
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
-                <Favorite onClick={()=>setfillFavorite(!fillFavorite)} sx={{color:fillFavorite?"red":'gray'}}/>
+                    <Favorite onClick={()=>setfillFavorite(!fillFavorite)} sx={{color:fillFavorite?"red":'gray'}}/>
                 </IconButton>
                 <IconButton aria-label="share">
                 <Share />
