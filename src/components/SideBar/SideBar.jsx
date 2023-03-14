@@ -1,11 +1,11 @@
 import "./SideBar.scss"
 import { Box } from "@mui/system"
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from "@mui/material"
-import { AccountBox, Group, Home, Mode, ModeNight, Pages, Person, Settings } from "@mui/icons-material"
+import { AccountBox, Group, Home, ModeNight, Pages, Person, Settings } from "@mui/icons-material"
 
 export default function SideBar(){
     return (
-    <Box flex={1}
+    <Box width="20vw"
     display={{
         xs: "none",
         sm: "block"

@@ -2,7 +2,7 @@ import { AppBar, styled,Box, InputBase, Badge, Avatar, Button, Menu, MenuItem, T
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import { Mail, Notifications } from "@mui/icons-material";
-import { Children, useState } from "react";
+import { useState } from "react";
 export default function NavBar(){
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -12,29 +12,27 @@ export default function NavBar(){
     const handleClose = () => {
       setAnchorEl(null);
     };
-    const StyledNavBar = styled(AppBar)({
-        margin:"0 0 .2rem 0",
+    const StyledNavBar = styled(Toolbar)({
         display:"flex",
-        position:"sticky"
+        justifyContent:"space-between"        
     })
     const Search = styled(Box)({
         backgroundColor:"white",
         color:"black",
         flex:"2",
         display:"flex",
-        justifyContent:"space-between",
+        justifyContent:"center",
         alignItems:"center",
         gap:".5rem",
         padding:"0.2rem .75rem",
         borderRadius:"30px",
-
+      
     })
     const Icons = styled(Box)(({theme})=>({
-        flex:"1",
         padding:".75rem",
         display:"flex",
+        flex:"1",
         gap:"1rem",
-        flexDirection:"row",
         alignItems:"center",
         justifyContent:"center",
         borderRadius:"30px",
@@ -50,13 +48,8 @@ export default function NavBar(){
     }))
     return (
         <>
-        <StyledNavBar >
-            <Toolbar sx={{ flexDirection:"row",
-                    justifyContent:"space-between",
-                    alignItems:"center",
-                    gap:"1rem",
-                    padding:"2rem 1rem",
-                    }}>
+        <AppBar position="sticky">
+            <StyledNavBar>
                 <Box display={"flex"}
                     fontSize={"2rem"}flex={1} justifyContent={"space-between"}
                     alignItems={"center"} gap="1rem">
@@ -82,26 +75,27 @@ export default function NavBar(){
                         <Avatar alt="my Image" sx = {{transform:{sm:"scale(0.8)"}}} onClick={handleClick}/>
                     {/* </PositionedMenu> */}
                 </Icons>
-            </Toolbar>
+            </StyledNavBar>
             <Menu
                     id="demo-positioned-menu"
                     aria-labelledby="demo-positioned-button"
-                    // anchorEl={anchorEl}
                     open={open}
                     onClose={handleClose}
                     anchorOrigin={{
-                        vertical: 100,
+                        vertical: "top",
                         horizontal: 'right',
                     }}
                     transformOrigin={{
-                        horizontal: 180,
+                        vertical:"top",
+                        horizontal:"right"
                     }}
                     >
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                     <MenuItem onClick={handleClose}>My account</MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu>
-    </StyledNavBar>
+              </Menu>
+    </AppBar>
+
             </>
     )
 
@@ -141,3 +135,104 @@ function PositionedMenu({children}) {
       </div>
     );
   }
+
+// import { Mail, Notifications, Pets } from "@mui/icons-material";
+// import {
+//   AppBar,
+//   Avatar,
+//   Badge,
+//   Box,
+//   InputBase,
+//   Menu,
+//   MenuItem,
+//   styled,
+//   Toolbar,
+//   Typography,
+// } from "@mui/material";
+// import React, { useState } from "react";
+
+// const StyledToolbar = styled(Toolbar)({
+//   display: "flex",
+//   justifyContent: "space-between",
+// });
+
+// const Search = styled("div")(({ theme }) => ({
+//   backgroundColor: "white",
+//   padding: "0 10px",
+//   borderRadius: theme.shape.borderRadius,
+//   width: "40%",
+// }));
+
+// const Icons = styled(Box)(({ theme }) => ({
+//   display: "none",
+//   alignItems: "center",
+//   gap: "20px",
+//   [theme.breakpoints.up("sm")]: {
+//     display: "flex",
+//   },
+// }));
+
+// const UserBox = styled(Box)(({ theme }) => ({
+//   display: "flex",
+//   alignItems: "center",
+//   gap: "10px",
+//   [theme.breakpoints.up("sm")]: {
+//     display: "none",
+//   },
+// }));
+// const Navbar = () => {
+//   const [open, setOpen] = useState(false);
+//   return (
+//     <AppBar position="sticky">
+//       <StyledToolbar>
+//         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
+//           LAMA DEV
+//         </Typography>
+//         <Pets sx={{ display: { xs: "block", sm: "none" } }} />
+//         <Search>
+//           <InputBase placeholder="search..." />
+//         </Search>
+//         <Icons>
+//           <Badge badgeContent={4} color="error">
+//             <Mail />
+//           </Badge>
+//           <Badge badgeContent={2} color="error">
+//             <Notifications />
+//           </Badge>
+//           <Avatar
+//             sx={{ width: 30, height: 30 }}
+//             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+//             onClick={(e) => setOpen(true)}
+//           />
+//         </Icons>
+//         <UserBox onClick={(e) => setOpen(true)}>
+//           <Avatar
+//             sx={{ width: 30, height: 30 }}
+//             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+//           />
+//           <Typography variant="span">John</Typography>
+//         </UserBox>
+//       </StyledToolbar>
+//       <Menu
+//         id="demo-positioned-menu"
+//         aria-labelledby="demo-positioned-button"
+//         open={open}
+//         onClose={(e) => setOpen(false)}
+//         anchorOrigin={{
+//           vertical: "top",
+//           horizontal: "right",
+//         }}
+//         transformOrigin={{
+//           vertical: "top",
+//           horizontal: "right",
+//         }}
+//       >
+//         <MenuItem>Profile</MenuItem>
+//         <MenuItem>My account</MenuItem>
+//         <MenuItem>Logout</MenuItem>
+//       </Menu>
+//     </AppBar>
+//   );
+// };
+
+// export default Navbar;

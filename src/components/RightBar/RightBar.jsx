@@ -1,9 +1,10 @@
-import { AvatarGroup,Avatar, Box, IconButton, Typography, Badge, ImageList, ImageListItem, ListItemText, List, ListItem, ListItemAvatar, Divider } from "@mui/material";
+import { AvatarGroup,Avatar, Box, Typography,  ImageList, ImageListItem, ListItemText, List, ListItem, ListItemAvatar, Divider } from "@mui/material";
 import { images } from '../../Assets'
 import './RightBar.scss'
 export default function RightBar(){
     return (
-    <Box flex={1} 
+    <Box 
+    width="30vw"
     display={{
         xs: "none",
         sm: "inline"
@@ -18,7 +19,7 @@ export default function RightBar(){
          padding="1rem 0"
          overflow="hidden"
         >
-            <Box>
+            <Box height="10vh">
                 <Typography variant="h5">
                     Online Friends
                 </Typography>
@@ -34,31 +35,31 @@ export default function RightBar(){
                     <Avatar ></Avatar>
                 </AvatarGroup>
             </Box>
-            <Box width="100%">
+            <Box width="100%" height="20vh" overflow="auto">
                 <Typography variant="h5" >
                     Latest photos
                 </Typography>
 
-                <ImageList sx={{display:"flex",flexWrap:"wrap", justifyContent:"flex-start"}}
+                <ImageList sx={{width:"100%",overflow:"auto", justifyContent:"flex-start", height:"15vh"  }}>
                     
-                >
-                    {Object.values(images)?.map((image,index)=>{
+                    {Object.values(images)?.map((image,index)=>{ 
                        return(
-                       <ImageListItem key={index} sx={{width:"20%"}}>
-                            <img src={image} alt="posts" />
-                        </ImageListItem>
+                            <ImageListItem key={index} >
+                                <img src={image} alt="posts" />
+                            </ImageListItem>
                        )
-                    })}
+                       })}
+                    
                 </ImageList>
             </Box>
 
-            <Box>
+            <Box height="50vh">
                     <Typography variant="h5">
-                            Recent Posts
+                            Recent Posts 
                     </Typography>
-                    <Box className="scrollContainer">
-                        <List sx={{bgcolor: 'background.paper', height:"90%"}}>
-                            <ListItem alignItems="flex-start">
+                    <Box height="100%" overflow="auto">
+                        <List>
+                            <ListItem alignItems="flex-start" sx={{width:"90%"}}>
                                 <ListItemAvatar>
                                     <Avatar>A</Avatar>
                                 </ListItemAvatar>
@@ -94,7 +95,6 @@ export default function RightBar(){
                                             sx={{ display: 'inline' }}
                                             component="span"
                                             variant="body2"
-                                            color="text.primary"
                                         >
                                             Ali Connors
                                         </Typography>
