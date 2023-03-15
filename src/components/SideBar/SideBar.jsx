@@ -3,13 +3,14 @@ import { Box } from "@mui/system"
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from "@mui/material"
 import { AccountBox, Group, Home, ModeNight, Pages, Person, Settings } from "@mui/icons-material"
 
-export default function SideBar(){
+export default function SideBar({mode,setMode}){
     return (
-    <Box width="20vw"
-    display={{
-        xs: "none",
-        sm: "block"
-    }}
+    <Box flex={1}
+      display={{
+      xs: "none",
+      md:"flex"
+      
+  }}
     position="relative"
     > 
     <Box position="fixed">
@@ -75,7 +76,9 @@ export default function SideBar(){
             <ListItemIcon>
               <ModeNight></ModeNight>
             </ListItemIcon>
-            <Switch></Switch>
+            <Switch 
+              onChange={e=>setMode(mode==='light'?'dark':'light')}
+            ></Switch>
           </ListItemButton>
         </ListItem>
     </Box>

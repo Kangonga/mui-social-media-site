@@ -4,11 +4,13 @@ import './RightBar.scss'
 export default function RightBar(){
     return (
     <Box 
-    width="30vw"
+    maxWidth="35vw"
+    flex={2}
     display={{
         xs: "none",
-        sm: "inline"
-    }} 
+        md:"flex"
+    }}
+    padding="0 .5rem"
     >
         <Box
          position="fixed"
@@ -16,10 +18,12 @@ export default function RightBar(){
          flexDirection="column"
          gap="1rem"
          height="99%"
+        //  width="inherit"
+         maxWidth="35vw"
          padding="1rem 0"
          overflow="hidden"
         >
-            <Box height="10vh">
+            <Box height="12vh">
                 <Typography variant="h5">
                     Online Friends
                 </Typography>
@@ -35,31 +39,41 @@ export default function RightBar(){
                     <Avatar ></Avatar>
                 </AvatarGroup>
             </Box>
-            <Box width="100%" height="20vh" overflow="auto">
+            <Box width="100%" height="20vh">
                 <Typography variant="h5" >
                     Latest photos
                 </Typography>
+                <Box
+                    sx={{
+                        display:"flex",
+                        flexDirection:"row",
+                        flexWrap:"nowrap",
+                        justifyContent:"flex-start",
+                        overflow:"auto",
+                        height:"17vh",
+                        width:"75%",
+                        gap:".5rem",
+                        padding:"0 .5rem"
+                    }}>
+                        {Object.values(images)?.map((image,index)=>{ 
+                        return(
+                            <Box >
+                                <img src={image} alt="posts" style={{height:"14vh"}}/>
+                            </Box>
+                        )
+                        })}
 
-                <ImageList sx={{width:"100%",overflow:"auto", justifyContent:"flex-start", height:"15vh"  }}>
-                    
-                    {Object.values(images)?.map((image,index)=>{ 
-                       return(
-                            <ImageListItem key={index} >
-                                <img src={image} alt="posts" />
-                            </ImageListItem>
-                       )
-                       })}
-                    
-                </ImageList>
+                </Box>
+
             </Box>
 
-            <Box height="50vh">
+            <Box height="40vh" width="100%" marginTop="2vh">
                     <Typography variant="h5">
                             Recent Posts 
                     </Typography>
-                    <Box height="100%" overflow="auto">
-                        <List>
-                            <ListItem alignItems="flex-start" sx={{width:"90%"}}>
+                    <Box height="100%" overflow="auto" width="77%">
+                        <List sx={{width:"100%"}}>
+                            <ListItem alignItems="flex-start" sx={{width:"100%",flexShrink:"0"}}>
                                 <ListItemAvatar>
                                     <Avatar>A</Avatar>
                                 </ListItemAvatar>
